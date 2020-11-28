@@ -1,1 +1,1 @@
-estos son scripts de python para automatizar facilitar tareas (no estan diseñados para que lo usen otras personas pero son libre de hacerlo)
+Estos son scripts de python para automatizar/facilitar tareas (no estan diseñados para que lo usen otras personas pero son libre de hacerlo)
