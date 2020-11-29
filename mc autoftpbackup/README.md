@@ -1,0 +1,1 @@
+Hace Backup del servidor de minecraft, el programa usa un archivo .env para las credenciales, nombre de la carpeta del mundo y carpeta donde se guardan los backups
