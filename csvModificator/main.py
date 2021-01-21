@@ -16,7 +16,6 @@ aarch = open(sys.argv[1]+"pros", 'w')
 for line in arch:
     if cont == 0:
         numcol = pro(line, columna)
-
     conter = 0
     arrey = str.split(line, ",")
     while conter < len(arrey):
