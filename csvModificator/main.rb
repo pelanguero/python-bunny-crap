@@ -12,7 +12,7 @@ columna=ARGV[1]
 arch=IO.readlines(ARGV[0])
 cont=0
 numcol=-1
-aarch=File.new(ARGV[0]+"pros","r+")
+aarch=File.new(ARGV[0]+"proc","w")
 for linea in arch
     if cont==0 
         numcol=pro(linea,columna)

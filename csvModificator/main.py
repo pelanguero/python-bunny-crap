@@ -1,11 +1,12 @@
 import sys
 
 
-def pro(strrr, buscarr):
+def pro(strrr):
+    indicess = []
     sss = str.split(strrr, ",")
     for item in sss:
-        if item == buscarr or item == buscarr+"\n":
-            return sss.index(item)
+        indicess.append(int(item))
+    return indicess
 
 
 def listarColumnas(columnas):
@@ -14,22 +15,26 @@ def listarColumnas(columnas):
         print(str(arreycolumns.index(item))+". "+item)
 
 
-columna = sys.argv[2]
 arch = open(sys.argv[1], "r")
 cont = 0
 numcol = -1
 aarch = open(sys.argv[1]+"pros", 'w')
+indices = {}
 for line in arch:
     if cont == 0:
-        numcol = pro(line, columna)
+        #numcol = pro(line, columna)
         listarColumnas(line)
+        inptt = input(
+            "Ingrese el numero correspondiente a las columnas que quiere eliminar separado por comas:\n")
+        indices = pro(inptt)
+
     cont = cont+1
     conter = 0
     arrey = str.split(line, ",")
     while conter < len(arrey):
-        if conter != numcol:
+        if conter not in indices:
             aarch.write(arrey[conter])
-            if conter == len(arrey)-2 and numcol == len(arrey)-1:
+            if conter == len(arrey)-2 and len(arrey)-1 in indices:
                 aarch.write("\n")
             elif conter != len(arrey)-1:
                 aarch.write(",")
