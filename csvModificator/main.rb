@@ -44,16 +44,21 @@ for linea in arch
         indices=pro(opcion)
     end
     arrey=linea.split(",")
-    arrey.each_with_index do |sub,indice|
-        if esta?(indices,indice)
-            aarch.syswrite(sub)
-            sx=indices.length()-1
-            if indices[sx] == indice and not sub.end_with?("\n")
-                aarch.syswrite("\n")
-            elsif indice!= arrey.length() -1
-                aarch.syswrite(",")
-            end
+    cos=0
+    while cos<indices.length() do 
+        if arrey[indices[cos]].end_with?("\n")
+            subss=arrey[indices[cos]]
+            ind=arrey[indices[cos]].length()
+            aarch.syswrite(subss[0,ind-2])
+        else
+            aarch.syswrite(arrey[indices[cos]])
         end
+        if cos==indices.length()-1
+            aarch.syswrite("\n")
+        else
+            aarch.syswrite(",")
+        end
+        cos=cos+1
     end
     cont=cont+1
 end
